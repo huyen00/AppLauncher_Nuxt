@@ -1,5 +1,10 @@
 <template>
-  <Tutorial />
+  <!-- <Tutorial /> -->
+  <div>
+  
+   <!-- <LayoutSidebar /> -->
+  </div>
+ 
 </template>
 
 <script>

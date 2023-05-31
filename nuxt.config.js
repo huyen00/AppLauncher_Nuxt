@@ -1,7 +1,8 @@
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'AppLauncher_NuxtJs',
+    title: 'hocNuxtJs',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -28,8 +29,17 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/fontawesome' , 
+    '@nuxtjs/composition-api/module'
   ],
-
+  fontawesome: {
+    component: 'Fa',
+     suffix: false,
+     icons: {
+       solid: true,
+       brands: true,
+     },
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
