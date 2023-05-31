@@ -1,0 +1,1 @@
+"# AppLauncher_NuxtJs" 
