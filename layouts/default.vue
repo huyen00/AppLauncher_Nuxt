@@ -77,7 +77,7 @@
               <div class="h-full px-3 pb-4 overflow-y-auto bg-white ">
                   <ul class="space-y-2 font-medium">
                       <li>
-                          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 ">
+                          <NuxtLink to="/dashboard" class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 ">
                               <svg aria-hidden="true"
                                   class="w-6 h-6 text-gray-500 transition duration-75  group-hover:text-gray-900 "
                                   fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@
                                   <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                               </svg>
                               <span class="ml-3">Dashboard</span>
-                          </a>
+                          </NuxtLink>
                       </li>
                       <li>
                           <NuxtLink to="/gameZone/ListGame"
@@ -147,7 +147,9 @@
           </aside>
   
           <div class="p-4 sm:ml-64">
-              <Nuxt />
+            <div class="p-4  mt-16">
+                <Nuxt />
+            </div>             
           </div>
     </div>
   </template>

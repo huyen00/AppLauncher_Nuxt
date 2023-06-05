@@ -12,15 +12,7 @@
                 <span class="text-base ">1 row selected</span>
         </div>
         <!-- <div>       -->
-            <form>   
-                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                <div class="relative">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </div>
-                    <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." required>
-                </div>
-            </form>
+           
         <!-- </div> -->
     </div>
     <div class="shadow-lg w-full px-4 py-3 my-5">
@@ -28,21 +20,62 @@
         <span class="px-3 py-1 text-white bg-[#F8AC1A] rounded-lg mx-2">library</span>
         <span class="px-3 py-1 text-white bg-[#6B848F] bg-opacity-50 rounded-lg mx-2" >Holomia</span>
     </div>
-    <div>
-{{ device }}
+    <div class="mt-3 w-1/4 ">
+        <form>   
+            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." required>
+            </div>
+            
+        </form>
+    </div>
+    <div class="my-3 flex flex-wrap">
+        <div  class="item_application my-3 mr-5 transition duration-500 ease-in-out transform  hover:shadow-lg">
+            <div class="relative image_application">
+                <a href="">
+                    <img src="~assets/deadland.png" alt="">
+                </a>
+                <div class="top-1 left-1 absolute z-10 transition duration-500 ease-in-out transform  hover:shadow-lg">
+                    <img src="~assets/CancelGame.png" alt="">
+                </div>
+            </div>
+            <div class="flex p-2 text_application bg-[#344054]">
+                <a href="" class="no-underline hover:no-underline hover:text-yellow-900">
+                    <h2 class="text-base text-white  ">Mission X</h2>
+                </a>
+            </div>
+        </div>
+        <div  class="item_application my-3 mr-5 transition duration-500 ease-in-out transform  hover:shadow-lg">
+            <div class="relative image_application">
+                <a href="">
+                    <img src="~assets/deadland.png" alt="">
+                </a>
+                <div class="top-1 left-1 absolute z-10 transition duration-500 ease-in-out transform  hover:shadow-lg">
+                    <img src="~assets/CancelGame.png" alt="">
+                </div>
+            </div>
+            <div class="flex p-2 text_application bg-[#344054]">
+                <a href="" class="no-underline hover:no-underline hover:text-yellow-900">
+                    <h2 class="text-base text-white title ">Mission X</h2>
+                </a>
+            </div>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
-import mapState from 'vuex'
+// import mapState from 'vuex'
 export default {
 name: 'ListGame',
 computed: {
-    ...mapState("stores", {}),
-    device(){
-        return this.$store.state.stores.count;
-    }
+    // ...mapState("stores", {}),
+    // device(){
+    //     return this.$store.state.stores.count;
+    // }
 }
 }
 </script>
