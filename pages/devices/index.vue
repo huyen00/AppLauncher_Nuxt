@@ -3,8 +3,27 @@
 
     <LoadingDevice v-if="fetchState.pending" />
     <template v-if="!fetchState.pending && !fetchState.error">
-      <DevicesSearch v-model="message" />
-    
+      <!-- <DevicesSearch v-model="message" /> -->
+
+      <div class="flex justify-between">
+        <div class="form_search w-96 mb-4">
+          <form>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <input type="search"  v-model="term" @keyup="searchDevice"
+                class="block w-full py-2 pl-5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
+                placeholder="Search" required />
+            </div>
+          </form>
+        </div>
+      </div>
+
       <div id="popup-modal" v-if="showModal" tabindex="-1"
         class="fixed top-0 left-0 right-0 z-50 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
         <div class="relative w-full h-full max-w-2xl md:h-auto mx-auto top-1/4">
@@ -39,7 +58,8 @@
           </div>
         </div>
       </div>
-      <DeviceList :devices="devices" @on-edit-name="editName" @on-change-default="changeDefaultApp" :sortBy="sortBy" :sortDirection="sortDirection" @on-sort="sortByValue" />
+      <DeviceList :devices="devices" @on-edit-name="editName" @on-change-default="changeDefaultApp" :sortBy="sortBy"
+        :sortDirection="sortDirection" @on-sort="sortByValue" />
 
       <DevicePagination :pagination="pagination" :currentPage="currentPage" :offset="offset"
         @on-click-page="changePage" />
@@ -66,7 +86,7 @@ export default defineComponent({
     LoadingDevice
   },
   setup() {
-    const { state: data, fetchDevices, changePageNumber, updateName, onShowModal, onCloseModal, changeDefaultApp,sortByValue,search } = useDevice();
+    const { state: data, fetchDevices, changePageNumber, updateName, onShowModal, onCloseModal, changeDefaultApp, sortByValue, search } = useDevice();
 
     const { fetchState } = useFetch(() => getDevives())
 
@@ -89,14 +109,18 @@ export default defineComponent({
 
       updateName(data.device)
     }
+    const searchDevice = () => {
+
+      search(data.term)
+    }
 
 
     return {
       showModal: toRef(data, 'showModal'),
       fetchState,
-      term:  toRef(data, 'term'),
-      sortBy:  toRef(data, 'sortBy'),
-      sortDirection:   toRef(data, 'sortDirection'),
+      term: toRef(data, 'term'),
+      sortBy: toRef(data, 'sortBy'),
+      sortDirection: toRef(data, 'sortDirection'),
       device: toRef(data, 'device'),
       errors: toRef(data, 'errors'),
       offset: toRef(data, 'offset'),
@@ -108,6 +132,7 @@ export default defineComponent({
       editName,
       closeModel,
       update,
+      searchDevice,
       search,
       sortByValue,
       onShowModal,

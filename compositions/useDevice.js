@@ -82,8 +82,10 @@ export const useDevice = () => {
 
     }
     const search = (term) => {
+        console.log(term)
         state.term = term
-        fetchDevices
+        fetchDevices()
+            // fetchDevices
     }
 
     return {
